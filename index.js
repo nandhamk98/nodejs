@@ -92,7 +92,7 @@ const movies = [
   },
 ];
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 app.get("/", function (req, res) {
   res.send("Hello World");
