@@ -97,7 +97,7 @@ const movies = [
 const PORT = process.env.PORT;
 
 app.get("/", function (req, res) {
-  res.send("Hello World");
+  res.send("Movies listing api");
 });
 
 app.get("/movies", async function (req, res) {
