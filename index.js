@@ -101,7 +101,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/movies", async function (req, res) {
-  let data = await client.db("b27we").collection("movies").find({}).toArray();
+  let data = await getAllMovies();
   res.send(data);
 });
 
@@ -147,3 +147,6 @@ app.post("/movies", async function (req, res) {
 app.listen(PORT, () => {
   console.log(`The server started in ${PORT}`);
 });
+async function getAllMovies() {
+  return await client.db("b27we").collection("movies").find({}).toArray();
+}
